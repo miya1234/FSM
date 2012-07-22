@@ -10,7 +10,7 @@
 namespace venus {
 
 Entity::Entity() {
-	// TODO Auto-generated constructor stub
+	m_energy=0;
 
 }
 

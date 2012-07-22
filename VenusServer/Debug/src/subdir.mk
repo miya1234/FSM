@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../src/Application.cpp \
 ../src/Entity.cpp \
+../src/EntityManager.cpp \
 ../src/VenusServer.cpp 
 
 OBJS += \
 ./src/Application.o \
 ./src/Entity.o \
+./src/EntityManager.o \
 ./src/VenusServer.o 
 
 CPP_DEPS += \
 ./src/Application.d \
 ./src/Entity.d \
+./src/EntityManager.d \
 ./src/VenusServer.d 
 
 
