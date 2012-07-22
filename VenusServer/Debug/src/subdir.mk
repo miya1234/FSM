@@ -7,18 +7,27 @@ CPP_SRCS += \
 ../src/Application.cpp \
 ../src/Entity.cpp \
 ../src/EntityManager.cpp \
+../src/InitialState.cpp \
+../src/Socket.cpp \
+../src/SocketState.cpp \
 ../src/VenusServer.cpp 
 
 OBJS += \
 ./src/Application.o \
 ./src/Entity.o \
 ./src/EntityManager.o \
+./src/InitialState.o \
+./src/Socket.o \
+./src/SocketState.o \
 ./src/VenusServer.o 
 
 CPP_DEPS += \
 ./src/Application.d \
 ./src/Entity.d \
 ./src/EntityManager.d \
+./src/InitialState.d \
+./src/Socket.d \
+./src/SocketState.d \
 ./src/VenusServer.d 
 
 

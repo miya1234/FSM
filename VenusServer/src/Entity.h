@@ -12,7 +12,7 @@
 namespace venus {
 
 class Entity {
-private:
+protected:
     int m_ID;
     std::string m_Name;
     int NextValidID(){static int NextID = 0; return NextID++;}

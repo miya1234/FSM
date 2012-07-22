@@ -31,6 +31,7 @@ public:
 
  public:
 	StateMachine<Application>* m_pStateMachine;
+	virtual void update(double);
 };
 
 } /* namespace venus */

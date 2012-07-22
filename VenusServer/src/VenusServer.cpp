@@ -7,10 +7,16 @@
 
 #include "VenusServer.h"
 #include "Application.h"
+#include "EntityManager.h"
+#include "Socket.h"
 
 
 
 int main() {
+	venus::EntityManager* entityMgr= venus::EntityManager::Instance();
+	venus::Socket* aSocket= new venus::Socket();
+	entityMgr->RegisterEntity(aSocket);
+
 	venus::Application hello("Hello ");
 	venus::Application world("World! ");
 
@@ -19,6 +25,13 @@ int main() {
 
 	thr_hello.join();
 	thr_world.join();
+
+	entityMgr->RemoveEntity(aSocket);
+	delete aSocket;
+	aSocket=NULL;
+
+	entityMgr->Reset();
+
 	return 0;
 }
 

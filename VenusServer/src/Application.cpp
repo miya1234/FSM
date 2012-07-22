@@ -6,7 +6,7 @@
  */
 
 #include "Application.h"
-
+#include "EntityManager.h"
 namespace venus {
 
 Application::Application(const char* msg)
@@ -22,9 +22,17 @@ Application::~Application() {
 
 // メンバ関数をマルチスレッドで実行
 void Application::run() {
-	for(int i = 0; i != kCount_; ++i)
-		if (!(i % kInterval_)) std::cout << kMessage_;
-	m_pStateMachine->update(1);
+	for(int i = 0; i != kCount_; ++i){
+		if (!(i % kInterval_)) {
+			update(1);
+		}
+	}
+}
+
+void Application::update(double time_elapsed){
+	m_pStateMachine->update(time_elapsed);
+	std::cout << kMessage_;
+	EntityManager::Instance()->Update(time_elapsed);
 }
 
 } /* namespace venus */

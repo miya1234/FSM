@@ -51,13 +51,13 @@ public:
 	  m_pPreviousState = m_pCurrentState;
 	  m_pNextState=pNewState;
 	  //call the exit method of the existing state
-	  if(m_pCurrentState!=NULL)m_pCurrentState->Exit(m_pOwner);
+	  if(m_pCurrentState!=NULL)m_pCurrentState->exit(m_pOwner);
 
 	  //change state to the new state
 	  m_pCurrentState = pNewState;
 	  m_pNextState=NULL;
 	  //call the entry method of the new state
-	  m_pCurrentState->Enter(m_pOwner);
+	  m_pCurrentState->entry(m_pOwner);
 	}
 
 	void  RevertToPreviousState()
@@ -68,10 +68,10 @@ public:
 	std::string GetNameOfCurrentState()const
 	{
 	    std::string s(typeid(*m_pCurrentState).name());
-	    if (s.size() > 5)
-	    {
-	      s.erase(0, 6);
-	    }
+//	    if (s.size() > 5)
+//	    {
+//	      s.erase(0, 6);
+//	    }
 	    return s;
 	  }
 };
