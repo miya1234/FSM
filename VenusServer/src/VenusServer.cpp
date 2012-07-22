@@ -17,14 +17,11 @@ int main() {
 	venus::Socket* aSocket= new venus::Socket();
 	entityMgr->RegisterEntity(aSocket);
 
-	venus::Application hello("Hello ");
-	venus::Application world("World! ");
+	venus::Application* pApp=venus::Application::Instance();
 
-	boost::thread thr_hello(boost::bind(&venus::Application::run, &hello));
-	boost::thread thr_world(boost::bind(&venus::Application::run, &world));
+	boost::thread thr_app(boost::bind(&venus::Application::run, pApp));
 
-	thr_hello.join();
-	thr_world.join();
+	thr_app.join();
 
 	entityMgr->RemoveEntity(aSocket);
 	delete aSocket;

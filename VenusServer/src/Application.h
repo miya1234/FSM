@@ -18,9 +18,13 @@
 namespace venus {
 
 class Application: public venus::Entity {
+private:
+	Application();
+	Application(const Application&);
+	Application& operator=(const Application&);
 public:
-	Application(const char* );
 	virtual ~Application();
+	static Application* Instance();
 
 	void run();
 

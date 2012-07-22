@@ -9,8 +9,8 @@
 #include "EntityManager.h"
 namespace venus {
 
-Application::Application(const char* msg)
-    :kMessage_(msg), kCount_(100000000), kInterval_(1000000)
+Application::Application()
+    :kMessage_("VenusSoftware"), kCount_(100000000), kInterval_(1000000)
 {
 	m_pStateMachine= new StateMachine<Application>(this);
 };
@@ -18,6 +18,13 @@ Application::Application(const char* msg)
 Application::~Application() {
 	delete m_pStateMachine;
 	m_pStateMachine=NULL;
+}
+
+Application* Application::Instance()
+{
+  static Application instance;
+
+  return &instance;
 }
 
 // メンバ関数をマルチスレッドで実行
