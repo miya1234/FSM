@@ -8,11 +8,11 @@
 #ifndef ELEMENT_H_
 #define ELEMENT_H_
 
-#include "Entity.h"
+#include "Particle.h"
 
 namespace venus {
 
-class Element: public venus::Entity {
+class Element: public venus::Particle {
 public:
 	Element();
 	virtual ~Element();
